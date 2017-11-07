@@ -1,0 +1,33 @@
+# PKGBUILD for bcloud 3.9.1
+# Maintainer  : Firef0x <Firefgx {at) gmail [dot} com>
+# Contributor : MJsaka <qiuxuenan@gmail.com>
+# Contributor : Firef0x <Firefgx {at) gmail [dot} com>
+# Copyright
+# This PKGBUILD released with the GPLv3 license
+
+pkgname=bcloud
+pkgver=3.9.1
+pkgrel=0
+pkgdesc='Baidu Pan client for Linux Desktop users'
+arch=('any')
+license=('GPL3')
+url="https://github.com/yomun/bcloud-build"
+depends=('python>=3' 'libnotify' 'python-keyring' 'python-dbus' 'python-gobject'
+		'gnome-icon-theme-symbolic' 'python-lxml' 'python-cssselect')
+optdepends=('python-crypto: crypto support for password encryption')
+conflicts=('bcloud-git')
+install=bcloud.install
+# source=("https://pypi.python.org/packages/source/b/bcloud/${pkgname}-${pkgver}.tar.gz")
+# source=("https://pypi.python.org/packages/cf/c0/4387bafe301eb91514b6687af544f79989e34a7dbf8f36d9f35cac4ef036/bcloud-3.8.2.tar.gz")
+source=("./bcloud-3.9.1.tar.gz")
+md5sums=('3f91ed3f87c0f47b525179ab2aa5c82c')
+
+build() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    python setup.py build
+}
+
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    python setup.py install -O1 --skip-build --root="$pkgdir"
+}

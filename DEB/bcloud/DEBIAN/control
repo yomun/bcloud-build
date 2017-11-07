@@ -1,0 +1,24 @@
+Package: bcloud
+Version: 3.9.1-0
+Architecture: all
+Maintainer: YufeiKang<kyf0722@gmail.com>
+Installed-Size: 900
+Depends: gir1.2-gnomekeyring-1.0|python3-pykde4,
+         gir1.2-gtk-3.0,
+         gir1.2-notify-0.7,
+         gnome-icon-theme-symbolic,
+         libgtk-3-0,
+         libnotify4,
+         notification-daemon,
+         python3-crypto,
+         python3-dbus,
+         python3-gi,
+         python3-pyinotify,
+         python3-keyring,
+         python3-lxml
+Section: gnome
+Priority: optional
+Homepage: https://github.com/yomun/bcloud-build
+Description: Baidu Pan client for linux users
+ Alternative client of Baidu Pan (Baidu Personal Cloud) for linux desktop 
+ users.
